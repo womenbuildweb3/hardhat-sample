@@ -53,10 +53,14 @@ contract Web3RSVP {
             maxCapacity
         )
     );
+
+    // make sure this id isn't already claimed
+    require(idToEvent[eventId].eventTimestamp == 0, "ALREADY REGISTERED");
+
     address[] memory confirmedRSVPs;
     address[] memory claimedRSVPs;
 
-    // this creates a new CreateEvent struct and adds it to the idToEvenet mapping
+    // this creates a new CreateEvent struct and adds it to the idToEvent mapping
 
     idToEvent[eventId] = CreateEvent(
         eventId,
