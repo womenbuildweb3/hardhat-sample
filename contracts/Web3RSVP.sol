@@ -121,7 +121,7 @@ contract Web3RSVP {
     }
     
     // Require that deposits are not already claimed by the event owner
-    require(myEvent.paidOut == False, "ALREADY PAID OUT");
+    require(myEvent.paidOut == false, "ALREADY PAID OUT");
     
     // Add the attendee to the claimedRSVPs list
     myEvent.claimedRSVPs.push(attendee);
@@ -136,5 +136,5 @@ contract Web3RSVP {
     require(sent, "Failed to send ETH");
 
    }
-   
+
 }
