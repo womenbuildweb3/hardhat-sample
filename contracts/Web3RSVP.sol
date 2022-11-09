@@ -23,6 +23,21 @@ contract Greeter {
 */
 
 contract Web3RSVP {
+    event NewEventCreated(
+        bytes32 eventID,
+        address creatorAddress,
+        uint256 eventTimestamp,
+        uint256 maxCapacity,
+        uint256 deposit,
+        string eventDataCID
+    );
+
+    event NewRSVP(bytes32 eventId, address attendeeAddress);
+
+    event ConfirmedAttendee(bytes32 eventID, address attendeeAddress);
+
+    event DepositPaidOut(bytes32 eventID);
+
     struct CreateEvent {
         bytes32 eventId;
         string eventDataCID;
@@ -181,6 +196,6 @@ contract Web3RSVP {
     require(sent, "Failed to send ETH");
    }
 
-   
+
 
 }
